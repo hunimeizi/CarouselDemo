@@ -82,19 +82,12 @@ public class SlideShowView extends FrameLayout {
      */
     private void initViewPagerScroll() {
         try {
-            Field mScroller = null;
-            mScroller = ViewPager.class.getDeclaredField("mScroller");
+            Field mScroller = ViewPager.class.getDeclaredField("mScroller");
             mScroller.setAccessible(true);
             ViewPagerScroller scroller = new ViewPagerScroller(
                     mAdvPager.getContext());
 //            scroller.setScrollDuration(1500);
             mScroller.set(mAdvPager, scroller);
-        } catch (NoSuchFieldException e) {
-            e.printStackTrace();
-        } catch (IllegalArgumentException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
         } catch (Exception e) {
             e.printStackTrace();
         }
